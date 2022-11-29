@@ -29,7 +29,9 @@ const gameBoard = (() => {
   }
 
   function resetBoard() {
-    board.forEach(el => el = '');
+    board.forEach((_element, index) => { 
+      board[index] = '';
+    });
   }
 
   return { setBoard, getBoard, getWinningCombinations, resetBoard };
@@ -69,6 +71,7 @@ const displayController = (() => {
         el.removeChild(el.lastChild);
       }
     });
+    showResult('');
   }
 
   /*
